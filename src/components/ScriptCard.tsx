@@ -1,9 +1,14 @@
 import { useState } from "react";
 import { Copy, Check } from "lucide-react";
 
-const ScriptCard = () => {
+interface ScriptCardProps {
+  title: string;
+  subtitle: string;
+  script: string;
+}
+
+const ScriptCard = ({ title, subtitle, script }: ScriptCardProps) => {
   const [copied, setCopied] = useState(false);
-  const script = 'loadstring(game:HttpGet("https://pastefy.app/mGVjjty0/raw"))()';
 
   const handleCopy = async () => {
     await navigator.clipboard.writeText(script);
@@ -12,16 +17,16 @@ const ScriptCard = () => {
   };
 
   return (
-    <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4">
+    <div className="w-full max-w-2xl">
       {/* Title */}
-      <h1 className="text-2xl md:text-3xl font-bold text-foreground mb-6 text-center tracking-wide">
-        <span className="text-primary">Crib Hub</span>
+      <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6 text-center tracking-wide">
+        <span className="text-primary">{title}</span>
         <span className="text-muted-foreground"> - </span>
-        <span className="text-foreground/90">99 nights in the forest</span>
-      </h1>
+        <span className="text-foreground/90">{subtitle}</span>
+      </h2>
 
       {/* Script Card */}
-      <div className="w-full max-w-2xl bg-card/40 backdrop-blur-xl border border-border/50 rounded-2xl p-4 shadow-2xl shadow-primary/10">
+      <div className="bg-card/40 backdrop-blur-xl border border-border/50 rounded-2xl p-4 shadow-2xl shadow-primary/10">
         <div className="flex items-center gap-3">
           {/* Script Text */}
           <div className="flex-1 bg-muted/50 rounded-xl px-4 py-3 overflow-x-auto">
