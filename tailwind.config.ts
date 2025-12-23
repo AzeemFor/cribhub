@@ -57,6 +57,16 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        bubble: {
+          background: "hsl(var(--bubble-background))",
+          primary: "hsl(var(--bubble-primary))",
+          secondary: "hsl(var(--bubble-secondary))",
+          glow: "hsl(var(--bubble-glow))",
+          deep: "hsl(var(--bubble-deep))",
+        },
+      },
+      backgroundImage: {
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -80,10 +90,35 @@ export default {
             height: "0",
           },
         },
+        float: {
+          "0%": {
+            transform: "translateY(0) translateX(0) scale(1)",
+            opacity: "0",
+          },
+          "10%": {
+            opacity: "1",
+          },
+          "90%": {
+            opacity: "1",
+          },
+          "100%": {
+            transform: "translateY(-100vh) translateX(20px) scale(1.1)",
+            opacity: "0",
+          },
+        },
+        "float-drift": {
+          "0%, 100%": {
+            transform: "translateX(0)",
+          },
+          "50%": {
+            transform: "translateX(30px)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        float: "float linear infinite",
       },
     },
   },
