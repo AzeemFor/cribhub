@@ -46,6 +46,16 @@ const Index = () => {
           subtitle="IY"
           script='loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()'
         />
+
+        {/* Coming Soon Text */}
+        <p className="text-xl md:text-2xl font-semibold tracking-wide">
+          <span className="text-foreground">More </span>
+          <span className="text-primary">Scripts</span>
+          <span className="text-foreground"> Soon! </span>
+          <span className="text-primary">-</span>
+          <span className="text-foreground"> CC </span>
+          <span className="text-primary">COMP</span>
+        </p>
       </div>
     </div>
   );
